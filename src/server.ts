@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import mainRoutes from './routes/index'
 
-require('dotenv').config()
+dotenv.config()
 
 const server = express()
 
@@ -19,4 +19,4 @@ server.use(mainRoutes);
 server.use((req, res)=> {
   res.send('página não encontrada')
 });
-server.listen(80);
+server.listen(process.env.PORT);
